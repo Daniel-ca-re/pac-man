@@ -25,6 +25,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void level(int);
+    void erraselevel();
+    void addpoint();
 
 public slots:
 
@@ -40,6 +43,8 @@ private:
     QTimer * timer;
     int points;
     int contador;
+    int lvl;
+    int vidas;
     QList <muro *> muros;
     QList <coin *> monedas;
 };

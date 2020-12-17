@@ -60,7 +60,7 @@ void man::up()
     posy -= 5*velocidad;
     if(posy<-40)
     {
-        posy=840;
+        posy=820;
     }
     setPos(posx,posy);
 
@@ -71,7 +71,7 @@ void man::down()
     posy += 5*velocidad;
     if(posy>840)
     {
-        posy=-40;
+        posy=-20;
     }
     setPos(posx,posy);
 }
@@ -81,7 +81,7 @@ void man::left()
     posx += 5*velocidad;
     if(posx>1040)
     {
-        posx=-40;
+        posx=-20;
     }
 
     setPos(posx,posy);
@@ -92,7 +92,7 @@ void man::right()
     posx -= 5*velocidad;
     if(posx<-40)
     {
-        posx=1040;
+        posx=1020;
     }
     setPos(posx,posy);
 }

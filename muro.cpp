@@ -19,7 +19,7 @@ QRectF muro::boundingRect() const
 
 void muro::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::darkMagenta);
+    painter->setBrush(Qt::blue);
     painter->drawRect(boundingRect());
 
 }

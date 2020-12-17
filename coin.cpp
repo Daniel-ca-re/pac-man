@@ -50,7 +50,7 @@ QRectF coin::boundingRect() const
 
 void coin::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::darkCyan);
+    painter->setBrush(Qt::darkYellow);
     painter->drawEllipse(boundingRect());
 
 }

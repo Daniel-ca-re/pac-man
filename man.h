@@ -8,7 +8,7 @@ class man: public QGraphicsItem
 {
     int r;
     int posx,posy;
-    int velocidad=2;
+    int velocidad=8;
 public:
     man();
     man(int r_, int x ,int y);
