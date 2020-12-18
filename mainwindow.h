@@ -10,6 +10,7 @@
 #include <iostream>
 #include "coin.h"
 #include <QTimer>
+#include <QMediaPlayer>
 
 using namespace std;
 
@@ -41,11 +42,15 @@ private:
     void keyPressEvent(QKeyEvent *evento);
     void fTimer();
     QTimer * timer;
+    QTimer * timers;
     int points;
     int contador;
     int lvl;
     int vidas;
     QList <muro *> muros;
     QList <coin *> monedas;
+    QMediaPlayer * losesound;
+    QMediaPlayer * wakawaka;
+    QMediaPlayer * theme;
 };
 #endif // MAINWINDOW_H

@@ -7,6 +7,7 @@
 #include "coin.h"
 #include <QLCDNumber>
 #include <QTimer>
+#include <QMediaPlayer>
 
 using namespace std;
 
@@ -18,6 +19,10 @@ void MainWindow::pass_second(){
         contador=0;
         vidas--;
         ui->numvidas->display(vidas);
+        scene->removeItem(pacman);
+        pacman = new man(20,220,220);
+        scene->addItem(pacman);
+        losesound->play();
         if(vidas==0)
         {
             erraselevel();
@@ -28,6 +33,7 @@ void MainWindow::pass_second(){
 
 }
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -36,8 +42,20 @@ MainWindow::MainWindow(QWidget *parent)
     scene= new QGraphicsScene;
     ui->graphicsView->setScene(scene);
     scene->setSceneRect(0,0,1000,800);
+
+    losesound= new QMediaPlayer();
+    losesound->setMedia(QUrl("qrc:/sounds/pacman-dies.mp3"));
+
+    theme= new QMediaPlayer();
+    theme->setMedia(QUrl("qrc:/sounds/pacman-song.mp3"));
+
+    wakawaka= new QMediaPlayer();
+    wakawaka->setMedia(QUrl("qrc:/sounds/pacman-waka-waka.mp3"));
+
+
     lvl=1;
     level(lvl);
+    //theme->play();
 
 
 
@@ -219,6 +237,7 @@ void MainWindow::level(int nivel)
     ui->cronometro->display(30-contador);
     vidas=3;
     ui->numvidas->display(vidas);
+    theme->play();
 
 
 }
@@ -242,6 +261,7 @@ void MainWindow::addpoint()
 {
     points++;
     ui->puntaje->display(points);
+    wakawaka->play();
     if(monedas.size()==0)
     {
         lvl++;

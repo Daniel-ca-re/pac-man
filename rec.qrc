@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>pacman-dies.mp3</file>
+        <file>pacman-song.mp3</file>
+        <file>pacman-waka-waka.mp3</file>
+    </qresource>
+</RCC>
